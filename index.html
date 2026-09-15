@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f6f4a" />
+    <title>Leafy 2026 — 달력 투두 리스트</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="floating-leaves" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Leafy 2026 홈">
+          <span class="brand-mark">🍃</span>
+          <span>
+            <strong>Leafy</strong>
+            <small>2026 PLANNER</small>
+          </span>
+        </a>
+        <div class="header-actions">
+          <button class="ghost-button" id="todayButton" type="button">오늘로</button>
+          <div class="date-badge" id="todayBadge"></div>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">GROW YOUR DAY</p>
+          <h1>하루의 작은 계획이<br /><em>한 해의 숲</em>이 되도록.</h1>
+        </div>
+        <p class="hero-copy">2026년의 할 일을 가볍게 기록하고,<br />차근차근 이루어 보세요.</p>
+      </section>
+
+      <section class="workspace">
+        <article class="calendar-card">
+          <div class="calendar-toolbar">
+            <div>
+              <p class="section-label">2026 CALENDAR</p>
+              <h2 id="monthTitle">1월</h2>
+            </div>
+            <div class="month-nav">
+              <button id="prevMonth" type="button" aria-label="이전 달">←</button>
+              <span id="monthCounter">01 / 12</span>
+              <button id="nextMonth" type="button" aria-label="다음 달">→</button>
+            </div>
+          </div>
+
+          <div class="weekdays" aria-hidden="true">
+            <span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span>
+          </div>
+          <div class="calendar-grid" id="calendarGrid" role="grid" aria-label="2026년 달력"></div>
+
+          <div class="calendar-footer">
+            <div class="legend"><i></i> 할 일이 있는 날</div>
+            <div class="year-nav" aria-label="월 바로가기">
+              <span id="yearMonths"></span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="todo-card">
+          <div class="todo-heading">
+            <div>
+              <p class="section-label" id="selectedDayLabel">THURSDAY</p>
+              <h2 id="selectedDateTitle">1월 1일</h2>
+            </div>
+            <div class="leaf-seal">🌿</div>
+          </div>
+
+          <form class="todo-form" id="todoForm">
+            <label class="sr-only" for="todoInput">새로운 할 일</label>
+            <input id="todoInput" maxlength="80" autocomplete="off" placeholder="새로운 할 일을 적어보세요" />
+            <button type="submit" aria-label="할 일 추가">+</button>
+          </form>
+
+          <div class="todo-summary">
+            <span id="todoCount">할 일 0개</span>
+            <button id="clearCompleted" type="button">완료 항목 정리</button>
+          </div>
+
+          <ul class="todo-list" id="todoList"></ul>
+
+          <div class="empty-state" id="emptyState">
+            <span>🌱</span>
+            <strong>아직 심은 계획이 없어요</strong>
+            <p>오늘 이루고 싶은 일을 추가해 보세요.</p>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="progress-label">
+              <span>이달의 성장</span>
+              <strong id="progressValue">0%</strong>
+            </div>
+            <div class="progress-track"><i id="progressBar"></i></div>
+          </div>
+        </aside>
+      </section>
+
+      <footer>
+        <p>© 2026 LEAFY PLANNER</p>
+        <p>당신의 모든 하루를 응원합니다 <span>🍀</span></p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
